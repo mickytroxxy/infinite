@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="theme-color" content="#2196f3">
+	<link rel="stylesheet" href="css/framework7.material.css">
+	<link rel="stylesheet" href="css/framework7.material.colors.css">
+	<link rel="stylesheet" href="css/material-icons.css">
+	<link rel="stylesheet" href="css/kitchen-sink.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/cardjs.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/socket.js"></script>
+	<script type="text/javascript" src="js/jquery.canvasCrop.js" ></script>
+</head>
+<body>
+<div class="views">
+	<div class="view view-main">
+		<div class="popover popover-menu">
+			<div class="popover-inner">
+				<div class="list-block">
+					<ul>
+						<li><a href="#" class="list-button item-link close-popover security-checklist-btn" title="staff" style="font-size:12px;">SECURITY CHECKLIST</a></li>
+						<li><a href="#" class="list-button item-link close-popover add-new-client-btn" title="staff" style="font-size:12px;">ADD NEW CLIENT</a></li>
+						<li><a href="#" class="list-button item-link close-popover add-new-stock-btn" title="staff" style="font-size:12px;">ADD NEW STOCK</a></li>
+						<li><a href="#" class="list-button item-link close-popover add-new-paint-btn" title="staff" style="font-size:12px;">ADD NEW PAINT</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="pages navbar-fixed">
+            <div data-page="option-page" class="page" style="background: #000">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="center"><img src="images/mag-snap.png" style="height: 30px; margin-top: 20px;"></div>
+                        <div class="right">
+							<a href="#" class="button go-to-login-page-btn" style="width:40px;left:20px;"><i class="material-icons color-green" style="font-size:36px;">lock</i></a>
+							<a href="#" data-popover=".popover-menu" class="open-popover button" style="width:40px;"><i class="material-icons color-white" style="font-size:36px;">more_vert</i></a>
+						</div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="list-block card no-hairlines vehicle-info-div" style="border-radius:5px;height: 200px;position: relative;background: url(images/wallpaper.jpg);background-size: cover;display:none;">
+                        <ul class="vertical-center">
+                            <li class="card" style="border-radius:5px;box-shadow:none;border: 1px solid #87ceeb;">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon material-icons" style="color:#87ceeb;">local_taxi</i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title card-show-key-ref" style="margin-top:5px;color:#757575;font-size:18px;"></div>
+                                        <div class="item-after"><a href="#" class="button show-search-input-btn">NEXT VEHICLE</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block inputs-list card no-hairlines search-input-div" style="border-radius:5px;height: 200px;position: relative;background: url(images/wallpaper.jpg);background-size: cover;">
+						<div class="vertical-center row" class="card" style="border-radius:5px;box-shadow:none;border: 1px solid #87ceeb;background:#fff;width:96%;margin-left:2%;">
+							<div class="col-80">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="floating-label">ENTER KEY REF OR REG NO</div>
+												<div class="item-input">
+													<input type="email" class="key-ref-input" />
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="col-20"><a href="#" class="button search-btn" style="height:75px;"><i class="icon material-icons" style='color:#87ceeb;font-size:50px;margin-top:15px;'>search</i></a></div>
+						</div>
+                    </div>
+                    <div class="list-block no-hairlines content-block">
+                        <ul>
+                            <li style="border-radius:5px;box-shadow:none;background: #3a3535;">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="material-icons color-sky">help</i></div>
+                                    <div class="item-inner">
+                                        <div class="item-after color-black" style="color: white;font-weight: bold;">What can you do below?</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-block1" style="margin-top: 0px;">
+                        <div class="row no-gutter">
+                            <div class="col-25 bookings-btn">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: orange;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><i class="material-icons color-white" style="font-size:36px;">assignment_turned_in</i></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>BOOKINGS</center></div>
+                                </div>
+                            </div>
+                            <div class="col-25 security-checklist-btn">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: teal;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><i class="material-icons color-white" style="font-size:36px;">verified_user</i></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>SECURITY CHECKLIST</center></div>
+                                </div>
+                            </div>
+                            <div class="col-25 add-other-photo-btn" title="ACCIDENT">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: orange;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><img src="images/accident.png" style="width:36px;"></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>ACCIDENT</center></div>
+                                </div>
+                            </div>
+                            <div class="col-25 security-checklist-btn add-other-photo-btn" title="FINAL STAGE">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: teal;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><i class="material-icons color-white" style="font-size:36px;">check_circle</i></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>FINAL STAGE</center></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutter">
+
+                            <div class="col-25 add-other-photo-btn" title="ADDITIONAL">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: teal;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><i class="material-icons color-white" style="font-size:36px;">add_circle</i></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>ADDITIONAL</center></div>
+                                </div>
+                            </div>
+                            <div class="col-25 work-in-progress-btn">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: orange;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><i class="material-icons color-white" style="font-size:36px;">trending_up</i></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>WORK IN PROGRESS</center></div>
+                                </div>
+                            </div>
+                            <div class="col-25 scan-document-btn">
+                                <div class="card" style="box-shadow:none;background: black;">
+                                    <div class="card-content" style="border-radius:20px;background: teal;">
+                                        <div class="card-content-inner" style="padding:15px;">
+                                            <center><i class="material-icons color-white" style="font-size:36px;">scanner</i></center>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>SCAN DOCUMENTS</center></div>
+                                </div>
+                            </div>
+                            <div class="col-25 add-notes-btn">
+								<div class="card" style="box-shadow:none;background: black;">
+									<div class="card-content" style="border-radius:20px;background: orange;">
+										<div class="card-content-inner" style="padding:15px;">
+											<center><i class="material-icons color-white" style="font-size:36px;">chat</i></center>
+										</div>
+									</div>
+									<div class="card-footer-custom" style="font-size:11px;color:#fff;font-weight:bold;margin-top:5px;"><center>ADD A COMMENT</center></div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div data-page="add-notes-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">ADD NOTES</div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block inputs-list card no-hairlines" style="border-radius:5px;height: 200px;position: relative;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;">
+						<ul class="vertical-center" style="background:#fff;border-radius:10px;padding:10px;width:90%;margin-left:2%">
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="material-icons color-sky">chat</i></div>
+									<div class="item-inner">
+										<div class="floating-label">LEAVE A COMMENT</div>
+										<div class="item-input">
+											<input type="text" class="notes-input" />
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="content-block">
+						<center>
+							<a href="#" class="button button-fill save-notes-btn" style="width: 200px;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;border-radius:10px;">SAVE COMMENT</a>
+						</center>
+					</div>
+
+
+				</div>
+			</div>
+			<div data-page="login-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">LOGIN PAGE</div>
+						<div class="right"><a href="#" class="button login-btn"><i class="material-icons color-green" style="font-size:36px;">check_circle</i></a></div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block content-block">
+						<ul><li style="background: url(images/wallpaper.jpg);background-size: cover;border-radius: 5px;" class="card">
+							<div class="item-content">
+								<div class="item-media"><i class="material-icons color-teal">add_circle_outline</i></div>
+								<div class="item-inner">
+									<div class="item-title" style="color:#757575;">CAREFULLY FILL IN</div>
+
+								</div>
+							</div>
+						</li></ul>
+					</div>
+					<div class="content-block">
+						<form class="list-block inputs-list staff-inputs card" style="padding: 0px; margin: 0px;border-radius:10px;box-shadow:none;">
+							<ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="material-icons color-sky">control_point_duplicate</i></div>
+                                        <div class="item-inner">
+                                            <div class="floating-label">BRANCH CODE</div>
+                                            <div class="item-input">
+                                                <input type="text" class="login-branch-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">lock</i></div>
+										<div class="item-inner">
+											<div class="floating-label">PASSWORD</div>
+											<div class="item-input">
+												<input type="password" class="login-password-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</form>
+						<div class="content-block">
+							<center>
+								<a href="#" class="button button-fill login-btn" style="width: 200px;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;">LOGIN</a>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-page="add-new-client-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">ADD NEW CLIENT</div>
+						<div class="right"><a href="#" class="button register-client-btn"><i class="material-icons color-green" style="font-size:36px;">check_circle</i></a></div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block content-block scanVin-btn">
+						<ul><li style="background: url(images/wallpaper.jpg);background-size: cover;border-radius: 5px;" class="card">
+							<div class="item-content">
+								<div class="item-media"><a href="#" class="button"><i class="material-icons color-teal" style="font-size:36px;">scanner</i></a></div>
+								<div class="item-inner">
+									<div class="item-title" style="color:#757575;margin-top:5px;">SCAN LICENCE DISK</div>
+
+								</div>
+							</div>
+						</li></ul>
+					</div>
+					<div class="content-block card" style="padding-bottom: 20px;border-radius:10px;">
+						<form class="list-block inputs-list staff-inputs" style="padding: 0px; margin: 0px;">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">person_outline</i></div>
+										<div class="item-inner">
+											<div class="floating-label">FIRST NAME</div>
+											<div class="item-input">
+												<input type="text" class="fname-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">account_circle</i></div>
+										<div class="item-inner">
+											<div class="floating-label">LAST NAME</div>
+											<div class="item-input">
+												<input type="text" class="lname-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">phone</i></div>
+										<div class="item-inner">
+											<div class="floating-label">CELL NUMBER</div>
+											<div class="item-input">
+												<input type="tel" class="cell-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon material-icons color-sky">list</i></div>
+										<div class="item-inner">
+											<div class="label">REGISTRATION NUMBER</div>
+											<div class="item-input">
+												<input type="text" class="reg-no-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">directions_car</i></div>
+										<div class="item-inner">
+											<div class="label">VEHICLE MAKE</div>
+											<div class="item-input">
+												<input type="text" class="make_input" />
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</form>
+						<div class="list-block no-hairlines">
+							<ul class="no-hairlines">
+								<li class="card" style="border-radius:10px;box-shadow:none;">
+									<a href="#" class="item-link smart-select">
+										<select class='select-branch-input option-goBack'>
+											<option value="MAG SELBY">MAG SELBY</option>
+											<option value="MAG LONGMEADOW">MAG LONGMEADOW</option>
+											<option value="MAG THE GLEN CUSTOMS">MAG THE GLEN CUSTOMS</option>
+											<option value="MAG THE GLEN EASTCLIFF">MAG THE GLEN EASTCLIFF</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">BRANCH</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!--<div data-page="security-checklist-page" class="page cached" style="background: #000">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+                        <div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">CLIENT INFORMATION</div>
+                        <div class="right"><a href="#" class="button update-security-btn"><i class="material-icons color-green" style="font-size:36px;">check_circle</i></a></div>
+                    </div>
+                </div>
+                <div class="page-content" >
+                    <div class="content-block card" style="padding-bottom: 20px;">
+                        <form class="list-block inputs-list staff-inputs" style="padding: 0px; margin: 0px;">
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="material-icons color-sky">person_outline</i></div>
+                                        <div class="item-inner">
+                                            <div class="label">REGISTRATION NUMBER</div>
+                                            <div class="item-input">
+                                                <input type="text" class="check-reg-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="material-icons color-sky">account_circle</i></div>
+                                        <div class="item-inner">
+                                            <div class="label">MAKE</div>
+                                            <div class="item-input">
+                                                <input type="text" class="check-make-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="material-icons color-sky">phone</i></div>
+                                        <div class="item-inner">
+                                            <div class="label">MODEL</div>
+                                            <div class="item-input">
+                                                <input type="text" class="check-model-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="material-icons color-sky">phone</i></div>
+                                        <div class="item-inner">
+                                            <div class="label">KILOMETRES</div>
+                                            <div class="item-input">
+                                                <input type="number" class="check-km-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="icon material-icons color-sky">list</i></div>
+                                        <div class="item-inner">
+                                            <div class="label">CHASES NUMBER</div>
+                                            <div class="item-input">
+                                                <input type="text" class="check-chasis-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="material-icons color-sky">directions_car</i></div>
+                                        <div class="item-inner">
+                                            <div class="label">TOWED BY</div>
+                                            <div class="item-input">
+                                                <input type="text" class="check-towed-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>-->
+			<div data-page="security-checklist-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center security-checklist-header" style="color: #fff; font-weight: bolder;font-size:16px;"></div>
+						<div class="right"><a href="#" class="button update-checklist-btn"><i class="material-icons color-green" style="font-size:36px;">check_circle</i></a></div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">TYRES</div>
+						<div class="card-content row no-gutter">
+							<div class="col-10" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">POS</div>
+							<div class="col-45" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">MAKE</div>
+							<div class="col-45" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-10" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/F</div>
+							<div class="col-45 list-block inputs-list" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<input type="text" class="tyre_rf_make_input" style="border-bottom: 1px solid green;" />
+							</div>
+							<div class="col-45 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="tyre_rf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>FAIR</option><option>WORN</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-10" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/F</div>
+							<div class="col-45 list-block inputs-list" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<input type="text" class="tyre_lf_make_input" style="border-bottom: 1px solid green;" />
+							</div>
+							<div class="col-45 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="tyre_lf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>FAIR</option><option>WORN</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-10" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/R</div>
+							<div class="col-45 list-block inputs-list" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<input type="text" class="tyre_rr_make_input" style="border-bottom: 1px solid green;" />
+							</div>
+							<div class="col-45 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="tyre_rr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>FAIR</option><option>WORN</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-10" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/R</div>
+							<div class="col-45 list-block inputs-list" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<input type="text" class="tyre_lr_make_input" style="border-bottom: 1px solid green;" />
+							</div>
+							<div class="col-45 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="tyre_lr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>FAIR</option><option>WORN</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">SPARE WHEEL</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">TYPE</div>
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">MAKE</div>
+							<div class="col-33" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="sparewheel_type_input">
+									<option>SELECT</option><option>Marie Biscuit</option><option>Steel Rim</option><option>Mag Rim</option><option>Hub Cap</option>
+								</select>
+							</div>
+							<div class="col-33 list-block inputs-list" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<input type="text" class="sparewheel_make_input" style="border-bottom: 1px solid green;" />
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="sparewheel_status_input">
+									<option>SELECT</option><option>GOOD</option><option>FAIR</option><option>WORN</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">MAG</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">POS</div>
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">DESC</div>
+							<div class="col-33" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">SCRATCHED</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_rf_type_input">
+									<option>SELECT</option><option>MAG</option><option>STEEL</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_rf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>SCRATCHED</option><option>DAMAGED</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_lf_type_input">
+									<option>SELECT</option><option>MAG</option><option>STEEL</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_lf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>SCRATCHED</option><option>DAMAGED</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_rr_type_input">
+									<option>SELECT</option><option>MAG</option><option>STEEL</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_rr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>SCRATCHED</option><option>DAMAGED</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_lr_type_input">
+									<option>SELECT</option><option>MAG</option><option>STEEL</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mag_lr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>SCRATCHED</option><option>DAMAGED</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">LIGHTS</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">POS</div>
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+							<div class="col-33" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">NONE</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="light_rf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox light_rf_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="light_lf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox light_lf_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="light_rr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox light_rr_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="light_lr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox light_lr_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">INDICATORS</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">POS</div>
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+							<div class="col-33" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">NONE</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="indicator_rf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox indicator_rf_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="indicator_lf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox indicator_lf_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="indicator_rr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox indicator_rr_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="indicator_lr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox indicator_lr_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">MIRROR</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">POS</div>
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+							<div class="col-33" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">NONE</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mirror_rf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox mirror_rf_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="mirror_lf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>CRACKED</option><option>BROKEN</option><option>SCRATCHED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<label class='label-switch'><input type='checkbox' class='advanced-checkbox mirror_lf_none_input' status=''>
+									<div class='checkbox'></div></label>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">UPHOLSTRY</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">POS</div>
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+							<div class="col-33" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STAINED</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_rf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>TORN</option><option>DAMAGED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_rf_stained_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/F</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_lf_status_input">
+									<option>SELECT</option><option>GOOD</option><option>TORN</option><option>DAMAGED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_lf_stained_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">R/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_rr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>TORN</option><option>DAMAGED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_rr_stained_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-33" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">L/R</div>
+							<div class="col-33 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_lr_status_input">
+									<option>SELECT</option><option>GOOD</option><option>TORN</option><option>DAMAGED</option>
+								</select>
+							</div>
+							<div class="col-33 list-block" style="border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="upholstry_lr_stained_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" style="background:#e9eaed;font-weight: bold;font-size: 16px;color: #757575;">ACCESSORIES</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">TYPE</div>
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;font-weight: bold;">STATUS</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">RADIO</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="radio_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">RADIO FACE</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="radio_face_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">CD SHUTTLE</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="cd_shuttle_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">CD PLAYER</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="cd_player_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">AERIAL</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="aerial_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">BATTERY</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="battery_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">KEYS</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="keys_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">SERVICE BOOK</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="service_book_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">Back Board</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="back_board_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">W/SPANNER</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="spanner_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">TOOLS</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="tools_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">JACK</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="jack_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">TRIANGLE</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="triangle_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">LOCK NUT</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="lock_nut_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">GEAR LOCK</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="gear_lock_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">CIG LIGHTER</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="cig_lighter_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">CAR MATS</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="car_mats_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+						<div class="card-content row no-gutter">
+							<div class="col-50" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px; height: 40px;">CENTRE CAPS</div>
+							<div class="col-50 list-block" style="border-right: 1px solid #e9eaed;border-bottom: 1px solid #e9eaed;padding-left: 5px;height: 40px;">
+								<select style="font-weight: bold;color: #757575;font-size: 14px;" class="centre_caps_status_input">
+									<option>SELECT</option><option>YES</option><option>NO</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-page="add-store-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">ADD STOCK ITEM</div>
+						<div class="right"><a href="#" class="button add-stock-btn"><i class="material-icons color-green" style="font-size:36px;">check_circle</i></a></div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block content-block">
+						<ul><li style="background: url(images/wallpaper.jpg);background-size: cover;border-radius: 5px;" class="card">
+							<div class="item-content">
+								<div class="item-media"><i class="material-icons color-teal">add_circle_outline</i></div>
+								<div class="item-inner">
+									<div class="item-title" style="color:#757575;">CAREFULLY FILL IN</div>
+
+								</div>
+							</div>
+						</li></ul>
+					</div>
+					<div class="content-block card" style="padding-bottom: 20px;">
+						<form class="list-block inputs-list staff-inputs" style="padding: 0px; margin: 0px;">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">person_outline</i></div>
+										<div class="item-inner">
+											<div class="floating-label">DESCRIPTION</div>
+											<div class="item-input">
+												<input type="text" class="stock-desc-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">account_circle</i></div>
+										<div class="item-inner">
+											<div class="floating-label">AMOUNT</div>
+											<div class="item-input">
+												<input type="number" class="stock-amount-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">phone</i></div>
+										<div class="item-inner">
+											<div class="floating-label">N/A</div>
+											<div class="item-input">
+												<input type="text" class="stock-na-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">list</i></div>
+										<div class="item-inner">
+											<div class="floating-label">ENTER SUPPLIER</div>
+											<div class="item-input">
+												<input type="text" class="stock-supplier-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</form>
+						<div class="list-block no-hairlines">
+							<ul class="no-hairlines">
+								<li class="card" style="border-radius:10px;box-shadow:none;">
+									<a href="#" class="item-link smart-select">
+										<select class='stock-category-input option-goBack'>
+											<option value="SUNDRIES">SUNDRIES</option>
+											<option value="PAINT SUPPLIES">PAINT SUPPLIES</option>
+											<option value="WASTE DISPOSAL">WASTE DISPOSAL</option>
+											<option value="INHOUSE STOCK">INHOUSE STOCK</option>
+											<option value="TOOLS">TOOLS</option>
+											<option value="EQUIPMENT">EQUIPMENT</option>
+											<option value="DEAD STOCK">DEAD STOCK</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">CATEGORY</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="card" style="border-radius:10px;box-shadow:none;">
+									<a href="#" class="item-link smart-select">
+										<select class='stock-branch-input option-goBack'>
+											<option value="MAG SELBY">MAG SELBY</option>
+											<option value="MAG LONGMEADOW">MAG LONGMEADOW</option>
+											<option value="MAG THE GLEN CUSTOMS">MAG THE GLEN CUSTOMS</option>
+											<option value="MAG THE GLEN EASTCLIFF">MAG THE GLEN EASTCLIFF</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">BRANCH</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="content-block">
+						<center>
+							<a href="#" class="button button-fill browse-stock-photo" style="width: 200px;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;">GET PHOTO</a>
+						</center>
+					</div>
+				</div>
+			</div>
+			<div data-page="add-paint-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">ADD PAINT INFO</div>
+						<div class="right"><a href="#" class="button add-paint-btn"><i class="material-icons color-green" style="font-size:36px;">check_circle</i></a></div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block content-block">
+						<ul><li style="background: url(images/wallpaper.jpg);background-size: cover;border-radius: 5px;" class="card">
+							<div class="item-content">
+								<div class="item-media"><i class="material-icons color-teal">add_circle_outline</i></div>
+								<div class="item-inner">
+									<div class="item-title" style="color: #fff;color:#757575;">CAREFULLY FILL IN</div>
+
+								</div>
+							</div>
+						</li></ul>
+					</div>
+					<div class="content-block card" style="padding-bottom: 20px;">
+						<form class="list-block inputs-list staff-inputs" style="padding: 0px; margin: 0px;">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">list</i></div>
+										<div class="item-inner">
+											<div class="floating-label">ENTER SUPPLIER</div>
+											<div class="item-input">
+												<input type="text" class="paint-supplier-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">person_outline</i></div>
+										<div class="item-inner">
+											<div class="floating-label">ENTER DESCRIPTION</div>
+											<div class="item-input">
+												<input type="text" class="paint-desc-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">list</i></div>
+										<div class="item-inner">
+											<div class="floating-label">ENTER SIZE/LITRE</div>
+											<div class="item-input">
+												<input type="text" class="paint-size-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">list</i></div>
+										<div class="item-inner">
+											<div class="floating-label">ENTER QUANTITY</div>
+											<div class="item-input">
+												<input type="number" class="paint-quantity-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="material-icons color-sky">account_circle</i></div>
+										<div class="item-inner">
+											<div class="floating-label">ENTER AMOUNT</div>
+											<div class="item-input">
+												<input type="number" class="paint-amount-input" />
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</form>
+						<div class="list-block no-hairlines">
+							<ul class="no-hairlines">
+								<li class="card" style="border-radius:10px;box-shadow:none;">
+									<a href="#" class="item-link smart-select">
+										<select class='paint-branch-input option-goBack'>
+											<option value="MAG SELBY">MAG SELBY</option>
+											<option value="MAG LONGMEADOW">MAG LONGMEADOW</option>
+											<option value="MAG THE GLEN CUSTOMS">MAG THE GLEN CUSTOMS</option>
+											<option value="MAG THE GLEN EASTCLIFF">MAG THE GLEN EASTCLIFF</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">BRANCH</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="content-block">
+						<center>
+							<a href="#" class="button button-fill browse-stock-photo" style="width: 200px;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;">GET PHOTO</a>
+						</center>
+					</div>
+				</div>
+			</div>
+			<div data-page="capture-bookings-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center show-sub-header" style="color: #fff; font-weight: bolder;font-size:16px;"></div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block card no-hairlines" style="border-radius:5px;height: 200px;position: relative;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;">
+						<ul class="vertical-center">
+							<li class="card" style="border-radius:5px;box-shadow:none;border: 1px solid #87ceeb;">
+								<div class="item-content">
+									<div class="item-media"><i class="material-icons color-sky">add_a_photo</i></div>
+									<div class="item-inner">
+										<div class="item-title show-current-bookings-photo-div" style="margin-top:5px;color:#757575;"></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="content-block display-bookings-btn" style="width:100%;"></div>
+					<div class="content-block display-other-btn" style="width:100%;display:none;">
+						<!--<a href='#' class='button button-fill captureBtn' style='border-radius: 5px;background: url(images/wallpaper.jpg);background-size: cover;color:#757575;'>CAPTURE</a>
+                        --><div class="card-content row">
+                            <div class="col-50 captureBtn" name="CAMERA">
+                                <div class="card" style="border-radius:15px;box-shadow:none;border: 1px solid #87ceeb;">
+                                    <div class="card-content">
+                                        <div class="card-content-inner"><center><i class="material-icons color-sky" style="font-size:50px;">add_a_photo</i></center></div>
+                                    </div>
+                                    <div class="card-footer" style="font-weight:bold; font-size:12px;">CAMERA</div>
+                                </div>
+                            </div>
+                            <div class="col-50 captureBtn" name="GALLERY">
+                                <div class="card" style="border-radius:15px;box-shadow:none;border: 1px solid #87ceeb;">
+                                    <div class="card-content">
+                                        <div class="card-content-inner"><center><i class="material-icons color-sky" style="font-size:50px;">photo_library</i></center></div>
+                                    </div>
+                                    <div class="card-footer" style="font-weight:bold; font-size:12px;">GALLERY</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div data-page="work-in-progress-page" class="page cached" style="background: #000">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+						<div class="center" style="color: #fff; font-weight: bolder;font-size:16px;">WORK IN PROGRESS</div>
+					</div>
+				</div>
+				<div class="page-content" >
+					<div class="list-block no-hairlines" style="border-radius:5px;">
+						<ul>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">STRIPPING STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="STRIPPING STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="STRIPPING STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">PANEL BEATING STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="PANEL BEATING STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="PANEL BEATING STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">PAINT PREP STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="PAINT PREP STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="PAINT PREP STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">PAINTING STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="PAINTING STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="PAINTING STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">ASSEMBLY STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="ASSEMBLY STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="ASSEMBLY STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">MECHANICAL STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="MECHANICAL STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="MECHANICAL STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">DIAGNOSTICS STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="DIAGNOSTICS STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="DIAGNOSTICS STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">POLISHING STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="POLISHING STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="POLISHING STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="margin-top:5px;color:#fff;">CLEANING STAGE</div>
+										<div class="item-after">
+											<a href="#" class="button work-in-progress-photo-btn" title="CLEANING STAGE" name="CAMERA"><i class="material-icons color-green">add_a_photo</i></a>
+                                            <a href="#" class="button work-in-progress-photo-btn" title="CLEANING STAGE" name="GALLERY"><i class="material-icons color-green">photo_library</i></a>
+                                        </div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+</html>
+<!-- 9233235133  Tracking number  9233233535-->
+
+
